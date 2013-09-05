@@ -10,17 +10,20 @@ angular.module('myApp.controllers', [])
   });
   $scope.votes = {};
   $scope.upvote = function(index){
-    $scope.votes[index] = $scope.votes[index] + 1 || 1;
+    if ($scope.votes[index]=== undefined){
+      $scope.votes[index] = 1;
+    } else {
+      $scope.votes[index]+=1;
+    }
   };
   $scope.downvote = function(index){
-    $scope.votes[index] = $scope.votes[index] - 1 || -1;
+    if ($scope.votes[index]=== undefined){
+      $scope.votes[index] = -1;
+    } else {
+      $scope.votes[index]-=1;
+    }
   };
   $scope.displayVote = function(index){
     return $scope.votes[index] || 0;
-  };
-  $scope.createVoteCounter = function(id){
-    //console.log(id);
-    $scope.votes[id] = 0;
-    //return $scope.votes[id];
   };
 }]);
