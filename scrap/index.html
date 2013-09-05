@@ -9,10 +9,19 @@
 
     <div ng-controller="MyController">
       <input type='text' ng-model='person.name' placeholder='Enter name:'/>
-      <h5> Hello {{ person.name }} </h5>
+      <h5> Hello {{ person.name }} it's now {{clock}}</h5>
       <p> the name in mycontroller is {{ person.name }}</p>
     </div>
 
+    <div ng-controller='DemoController'>
+      <h4>Adder</h4>
+      <button ng-click='add(2)' class='button'>Add</button>
+      <button ng-click='subtract(3)' class='button'>Subtract</button>
+      <h4>Count: {{counter}}</h4>
+    </div>
+    <div ng-controller='httpController'>
+      <p>data is {{beerdata}}</p>
+    </div>
     <div ng-controller='PlayerController'>
       <button ng-click='play()' class='button' ng-show='!playing'>Play</button>
       <button ng-click='stop()' class='button alert' ng-show='playing'>Stop</button>
