@@ -11,20 +11,10 @@
 </head>
 <body>
 
-<h1>Hi</h1>
-<div ng-controller='MainController'>
-  <div ng-repeat='post in redditData' class="displayPost">
-    <div>
-      <button ng-click="upvote($index)">Upvote</button><br>
-      {{ displayVote($index) }}<br>
-      <button ng-click="downvote($index)">Downvote</button>
-    </div>
-    <div>
-      <img src="{{ post.data.thumbnail }}"/> {{ post.data.author }}:
-      <a href=" {{ post.data.url }}"><b>{{ post.data.title }}</b></a>
-    </div>
-  </div>
+<h1>Reddit 2.0</h1>
+<div ng-view>
 </div>
+
   <script type="text/javascript" src="js/vendor/angular/angular.js"></script>
   <script type="text/javascript" src="js/vendor/angular-route/angular-route.js"></script>
   <script type="text/javascript" src="js/app.js"></script>

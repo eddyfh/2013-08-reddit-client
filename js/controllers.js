@@ -26,4 +26,5 @@ angular.module('myApp.controllers', [])
   $scope.displayVote = function(index){
     return $scope.votes[index] || 0;
   };
-}]);
+}])
+.controller('LoginController',[function(){}]);
