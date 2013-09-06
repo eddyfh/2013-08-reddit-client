@@ -1,11 +1,14 @@
-<div ng-repeat='post in redditData' class="displayPost">
-  <div>
-    <button ng-click="upvote($index)">Upvote</button><br>
-    {{ displayVote($index) }}<br>
-    <button ng-click="downvote($index)">Downvote</button>
-  </div>
-  <div>
-    <img src="{{ post.data.thumbnail }}"/> {{ post.data.author }}:
-    <a href=" {{ post.data.url }}"><b>{{ post.data.title }}</b></a>
+<div>
+  <a href='#/login'>Login!</a>
+  <div ng-repeat='post in redditData' class="displayPost row well well-sm">
+      <div class="col-md-2 col-md-offset-2 votes">
+        <button ng-click="upvote($index)" class="btn btn-primary btn-xs">Upvote</button><br>
+        {{ displayVote($index) }}<br>
+        <button ng-click="downvote($index)" class="btn btn-primary btn-xs">Downvote</button>
+      </div>
+      <div class="col-md-6">
+        <img src="{{ post.data.thumbnail }}"/> {{ post.data.author }}:
+        <a href=" {{ post.data.url }}"><b>{{ post.data.title }}</b></a>
+      </div>
   </div>
 </div>
